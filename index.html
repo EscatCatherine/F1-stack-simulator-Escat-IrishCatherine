@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stack Simulator</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='simulator.css') }}">
+  <title>Queue Simulator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <div class="container">
-  <h1>Stack Simulator (LIFO)</h1>
+  <h1>Queue Simulator (FIFO)</h1>
 
   <form class="add" method="post" action="{{ url_for('operate') }}">
     <input type="text" name="value" placeholder="Enter a value" maxlength="24" autofocus>
-    <button type="submit" name="action" value="push" style="width:auto">Push</button>
+    <button type="submit" name="action" value="enqueue" style="width:auto">Enqueue</button>
   </form>
 
   <form class="actions" method="post" action="{{ url_for('operate') }}">
-    <button type="submit" name="action" value="pop" class="warn">Pop</button>
+    <button type="submit" name="action" value="dequeue" class="warn">Dequeue</button>
     <button type="submit" name="action" value="peek" class="alt">Peek</button>
     <button type="submit" name="action" value="clear" class="danger">Clear</button>
   </form>
@@ -27,21 +27,23 @@
     {% endfor %}
   {% endwith %}
 
-  <h3>Stack (Top first) <span class="size">Size: {{ size }}</span></h3>
-  <div class="row col">
+  <h3>Queue (Front → Rear) <span class="size">Size: {{ size }}</span></h3>
+  <div class="row">
     {% for item in items %}
       <div class="item {% if highlight and loop.first %}highlight{% endif %}">
-        {% if loop.first %}<span class="tag">TOP</span>{% endif %}
+        {% if loop.first and loop.last %}<span class="tag">FRONT / REAR</span>
+        {% elif loop.first %}<span class="tag">FRONT</span>
+        {% elif loop.last %}<span class="tag">REAR</span>{% endif %}
         {{ item }}
       </div>
     {% else %}
-      <span class="empty">Stack is empty</span>
+      <span class="empty">Queue is empty</span>
     {% endfor %}
   </div>
 
   <h3>Removed Items</h3>
   <div class="row removed">
-    {% for item in popped %}<div class="item">{{ item }}</div>
+    {% for item in removed %}<div class="item">{{ item }}</div>
     {% else %}<span class="empty">No removed items</span>{% endfor %}
   </div>
 </div>

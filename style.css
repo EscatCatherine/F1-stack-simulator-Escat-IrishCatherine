@@ -1,0 +1,17 @@
+body{font-family:Segoe UI,Arial,sans-serif;background:#f3f4f8;margin:0;padding:24px;color:#222}
+.container{max-width:640px;margin:auto;background:#fff;padding:24px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+h1{text-align:center;margin-top:0}
+form.add{display:flex;gap:8px;margin-bottom:12px}
+form.add input{flex:1;padding:10px;border:1px solid #bbb;border-radius:6px;font-size:16px}
+form.actions{display:flex;gap:8px;margin-bottom:16px}
+button{width:100%;padding:10px 14px;border:0;border-radius:6px;background:#4f46e5;color:#fff;font-size:15px;cursor:pointer}
+button.danger{background:#dc2626}button.alt{background:#0891b2}button.warn{background:#d97706}
+.message{padding:10px;border-radius:6px;margin-bottom:10px;text-align:center}
+.message.error{background:#fee2e2;color:#991b1b}.message.success{background:#dcfce7;color:#166534}
+.row{display:flex;flex-wrap:wrap;gap:12px;min-height:56px;padding:14px 10px 10px;border:2px dashed #ccc;border-radius:8px;align-items:center}
+.row.col{flex-direction:column;align-items:stretch}
+.item{position:relative;padding:14px 18px;background:#e0e7ff;border-radius:6px;font-weight:600;text-align:center}
+.item .tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:10px;background:#111;color:#fff;border-radius:4px;padding:1px 6px;white-space:nowrap}
+.item.highlight{background:#fde047;outline:3px solid #d97706}
+.removed .item{background:#fecaca}
+h3{margin:18px 0 6px}.empty{color:#888;font-style:italic}.size{color:#555;font-size:14px;font-weight:normal}
