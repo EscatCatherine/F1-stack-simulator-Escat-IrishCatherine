@@ -31,6 +31,7 @@ This is the unfinished repository for a pre-demo reading activity. Read `Flask_P
 - static/css/style.css: supplied appearance adapted for this preview.
 - static/js/ui.js: optional focus enhancement and a later effect TODO.
 - requirements.txt: Flask dependency only.
+- Part I: Flask Stack Simulator (Push, Pop, Peek, Clear)
 
 During the demo, the instructor will convert static paths into url_for calls, connect form submission, introduce Jinja variables and loops, and connect Python stack operations. The three HTML files are intentionally independent before that conversion.
 
